@@ -1,0 +1,40 @@
+fields:
+    id:
+        label: 'ID'
+        disabled: true
+        span: left
+        type: number
+    parent:
+        label: 'Parent category'
+        type: relation
+        span: right
+    name:
+        label: 'Name category'
+        type: text
+        span: left
+    slug:
+        label: 'Generate URL'
+        type: text
+        span: right
+        preset:
+            field: name
+            type: url
+    image:
+        label: 'Cover for category'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+    is_published:
+        label: 'Published category'
+        span: right
+        type: switch
+    description:
+        label: 'Description category'
+        size: large
+        span: full
+        type: richeditor
+        comment: 'its optional, you make empty description'
