@@ -2,7 +2,9 @@
 
 use Model;
 use October\Rain\Database\Traits\NestedTree;
+use October\Rain\Database\Traits\Sluggable;
 use October\Rain\Database\Traits\SoftDelete;
+use October\Rain\Database\Traits\Sortable;
 use October\Rain\Database\Traits\Validation;
 use System\Models\File;
 
@@ -11,7 +13,7 @@ use System\Models\File;
  */
 class Category extends Model
 {
-    use Validation, NestedTree, SoftDelete;
+    use Validation, NestedTree, SoftDelete, Sluggable;
 
     /**
      * @var string table associated with the model
@@ -61,6 +63,8 @@ class Category extends Model
         'updated_at',
         'deleted_at'
     ];
+
+    public $slugs = ['slug' => 'name'];
 
     /**
      * @var array hasOne and other relations

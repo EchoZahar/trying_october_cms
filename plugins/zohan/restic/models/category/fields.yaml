@@ -8,6 +8,7 @@ fields:
         label: 'Parent category'
         type: relation
         span: right
+        emptyOption: parent category
     name:
         label: 'Name category'
         type: text
