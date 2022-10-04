@@ -25,6 +25,10 @@ fields:
             type: slug
         type: text
         comment: 'auto compiled field'
+    is_published:
+        label: Published dish
+        span: left
+        type: switch
     price:
         labal: price
         span: right

@@ -6,20 +6,21 @@ columns:
     image:
         label: 'cover image'
         type: image
-        width: 150
-        height: 150
-
+        width: '150'
     id:
         label: ID
         searchable: true
         type: number
-        width: 50
-
+        width: '50'
     name:
         label: 'Category name'
         searchable: true
         type: text
-
+    is_published:
+        label: publication
+        type: switch
+        default: '1'
+        sortable: true
     created_at:
         label: 'Date creation'
         type: datetime

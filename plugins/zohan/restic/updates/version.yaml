@@ -11,3 +11,6 @@
 1.0.5:
     - 'Updated table zohan_restic_dishes'
     - builder_table_update_zohan_restic_dishes.php
+1.0.6:
+    - 'Updated table zohan_restic_dishes'
+    - builder_table_update_zohan_restic_dishes_2.php
