@@ -1,24 +1,21 @@
 <?php namespace Zohan\Restic\Models;
 
 use Model;
-use October\Rain\Database\Traits\NestedTree;
-use October\Rain\Database\Traits\Sluggable;
 use October\Rain\Database\Traits\SoftDelete;
-use October\Rain\Database\Traits\Sortable;
 use October\Rain\Database\Traits\Validation;
 use System\Models\File;
 
 /**
- * Category Model
+ * Dish Model
  */
-class Category extends Model
+class Dish extends Model
 {
-    use Validation, NestedTree, SoftDelete, Sluggable;
+    use Validation, SoftDelete;
 
     /**
      * @var string table associated with the model
      */
-    public $table = 'zohan_restic_categories';
+    public $table = 'zohan_restic_dishes';
 
     /**
      * @var array guarded attributes aren't mass assignable
@@ -64,25 +61,20 @@ class Category extends Model
         'deleted_at'
     ];
 
-    public $slugs = ['slug' => 'name'];
-
     /**
      * @var array hasOne and other relations
      */
     public $hasOne = [];
-    public $hasMany = [
-        'children'  => [Category ::class, 'key' => 'parent_id'],
-        'dishes'    => [Dish::class],
-    ];
+    public $hasMany = [];
     public $belongsTo = [
-        'parent' => [Category ::class, 'key' => 'parent_id'],
+        'category' => [Category::class, 'key' => 'category_id'],
     ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [
-        'image' => [File::class],
+    public $attachOne = [];
+    public $attachMany = [
+        'dish_images' => [File::class],
     ];
-    public $attachMany = [];
 }

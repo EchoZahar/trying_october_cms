@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+        width: '20'
+    dish_images:
+        label: 'dish images'
+        type: image
+        relation: dish_images
+        sortable: false
+        width: '200'
+    name:
+        label: 'Name dish'
+        type: text
+        searchable: true
+        sortable: true
+        width: '100'
+    created_at:
+        label: 'created date'
+        type: datetime
+

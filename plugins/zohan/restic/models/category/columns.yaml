@@ -4,20 +4,22 @@
 
 columns:
     image:
-        label: cover image
+        label: 'cover image'
         type: image
         width: 150
         height: 150
+
     id:
         label: ID
         searchable: true
         type: number
         width: 50
+
     name:
-        label: Category name
+        label: 'Category name'
         searchable: true
         type: text
 
     created_at:
-        label: Date creation
+        label: 'Date creation'
         type: datetime

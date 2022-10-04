@@ -50,10 +50,11 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
+//        return []; // Remove this line to activate
 
         return [
-            'Zohan\Restic\Components\MyComponent' => 'myComponent',
+            'Zohan\Restic\Components\Catalog' => 'catalog',
+            'Zohan\Restic\Components\Dishes' => 'dishes',
         ];
     }
 
@@ -98,9 +99,9 @@ class Plugin extends PluginBase
                         'permissions' => ['zohan.restic.*'],
                     ],
                     'dishes' => [
-                        'label' => 'Dishes (later was be added)',
+                        'label' => 'Dishes',
                         'icon' => 'icon-copy',
-                        'url' => Backend::url('zohan/restic/categories'),
+                        'url' => Backend::url('zohan/restic/dishes'),
                     ]
                 ]
             ],

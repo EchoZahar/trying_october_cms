@@ -1,0 +1,52 @@
+fields:
+    id:
+        label: ID
+        span: left
+        disabled: true
+        type: text
+    category:
+        label: 'Category dish'
+        emptyOption: chose category
+        descriptionFrom: description
+        span: right
+        type: relation
+        comment: 'chose category (required filed)'
+    name:
+        label: 'Name dish'
+        span: left
+        placeholder: 'inter dish title'
+        type: text
+        comment: 'required filed'
+    slug:
+        label: 'URL this dish'
+        span: right
+        preset:
+            field: name
+            type: slug
+        type: text
+        comment: 'auto compiled field'
+    price:
+        labal: price
+        span: right
+        comment: 'set the price for this dish'
+        type: number
+        placeholder: 'format: 0.00'
+        format: "$%.2f"
+    description:
+        label: 'Description this dish'
+        size: large
+        span: full
+        type: richeditor
+    dish_images:
+        label: 'Dish images'
+        mode: image
+        useCaption: 0
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+        imageHeight: '1080'
+        imageWidth: '1920'
+#        mimeTypes: jpg,jpeg,png
+#        deferredBinding: true
