@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {% if dish.dish_images.count > 0%}
+            <div class="card">
+                <div class="row">
+                {% for img in dish.dish_images %}
+                    <div class="col-md-4">
+                        <img src="{{ img.path }}" class="card-img-top" alt="something wrong image not upload">
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>{{ dish.name }}</strong>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <a href="/catalog/{{ dish.category.slug }}" class="btn btn-primary">go back to {{ dish.category.name }}</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        {{ dish.description|raw }}
+                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    Price: <strong>{{ dish.price }}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

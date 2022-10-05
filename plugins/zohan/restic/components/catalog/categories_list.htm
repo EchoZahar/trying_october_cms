@@ -1,0 +1,23 @@
+<div class="col-md-4">
+    <div class="card">
+        <a class="nav-link" href="/catalog/{{ category.slug }}">
+            {% if category.image != null%}
+            <img alt="{{ category.image.path }}" class="card-img-top" src="{{ category.image.path }}">
+            {% endif %}
+            <div class="card-body">
+                <div class="card-title">
+                    {{ category.name }}
+                </div>
+            </div>
+        </a>
+        <div class="card-footer">
+            Found dishes count: {{ category.dishes.count ?? 0 }}
+        </div>
+    </div>
+</div>
+{% if category.children.count() > 0 %}
+    {% for category in category.children %}
+    {% partial __SELF__~"::categories_list" category = category %}
+    {% endfor %}
+{% endif %}
+

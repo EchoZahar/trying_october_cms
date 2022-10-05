@@ -1,8 +1,19 @@
 url = "/catalog"
 layout = "default"
 title = "Catalog"
-meta_title = "meta meta meta"
-meta_description = "meta description"
 
-[CatalogCategories]
+[catalog]
+categories = 10
 ==
+<!-- Page Explanation -->
+<div class="explanation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2">
+                {% component 'catalog' %}
+                <div class="explanation-decoration-1"></div>
+                <div class="explanation-decoration-2"></div>
+            </div>
+        </div>
+    </div>
+</div>

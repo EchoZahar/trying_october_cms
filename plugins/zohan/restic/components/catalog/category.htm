@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>{{ category.name }}</h1>
+            <h3>{{ category.description|raw }}</h3>
+            <div class="text-center">
+                <a href="/catalog" class="btn btn-primary">show all categories</a>
+            </div>
+        </div>
+        {% if category.image %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{ category.image.path }}" alt="" width="350">
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="row {%if ategory.dishes.count > 3 %} justify-content-center {% endif %}">
+        {% if category.dishes.count > 0%}
+        {% for dish in category.dishes %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ dish.dish_images.first.path }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-title">
+                        <a href="/catalog/{{ category.slug }}/{{ dish.slug }}">{{ dish.name }}</a>
+                    </div>
+                    <div class="card-text">
+                        {{ dish.description|raw }}
+                    </div>
+                    <div class="text-end">
+                        Price: <a href="/catalog/{{ category.slug }}/{{ dish.slug }}" class="btn btn-primary">{{ dish.price }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="col-md-12 text-center">
+            <strong class="text-danger">dishes not found</strong>
+        </div>
+        {% endif %}
+    </div>
+</div>

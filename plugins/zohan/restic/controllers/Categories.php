@@ -2,12 +2,15 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use October\Rain\UtilityFunctions;
+use October\Rain\Database\Traits\DeferredBinding;
 
 /**
  * Categories Backend Controller
  */
 class Categories extends Controller
 {
+    use DeferredBinding;
     public $implement = [
         \Backend\Behaviors\FormController::class,
         \Backend\Behaviors\ListController::class

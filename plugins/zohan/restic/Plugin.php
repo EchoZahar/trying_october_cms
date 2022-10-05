@@ -2,6 +2,9 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Zohan\Restic\Components\Dishes as Dishes;
+use Zohan\Restic\Components\Catalog as Catalog;
+use Zohan\Restic\Components\Category as CatalogCategory;
 
 /**
  * Plugin Information File
@@ -50,11 +53,10 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-//        return []; // Remove this line to activate
-
         return [
-            'Zohan\Restic\Components\Catalog' => 'catalog',
-            'Zohan\Restic\Components\Dishes' => 'dishes',
+            Catalog::class          => 'catalog',
+//            Dishes::class           => 'dishes',
+//            CatalogCategory::class  => 'category'
         ];
     }
 
@@ -65,11 +67,9 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-//        return []; // Remove this line to activate
-
         return [
             'zohan.restic.some_permission' => [
-                'tab' => 'Restic',
+                'tab'   => 'Restic',
                 'label' => 'Some permission'
             ],
         ];
@@ -82,26 +82,24 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-//        return []; // Remove this line to activate
-
         return [
             'restic' => [
-                'label'       => 'Restic',
+                'label'       => 'Restic Catalog',
                 'url'         => Backend::url('zohan/restic/categories'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['zohan.restic.*'],
                 'order'       => 500,
                 'sideMenu'       => [
-                    'categories' => [
-                        'label' => 'Categories',
-                        'icon' => 'icon-copy',
-                        'url' => Backend::url('zohan/restic/categories'),
-                        'permissions' => ['zohan.restic.*'],
+                    'categories'    => [
+                        'label'         => 'Categories',
+                        'icon'          => 'icon-copy',
+                        'url'           => Backend::url('zohan/restic/categories'),
+                        'permissions'   => ['zohan.restic.*'],
                     ],
-                    'dishes' => [
-                        'label' => 'Dishes',
-                        'icon' => 'icon-copy',
-                        'url' => Backend::url('zohan/restic/dishes'),
+                    'dishes'        => [
+                        'label'         => 'Dishes',
+                        'icon'          => 'icon-pencil',
+                        'url'           => Backend::url('zohan/restic/dishes'),
                     ]
                 ]
             ],

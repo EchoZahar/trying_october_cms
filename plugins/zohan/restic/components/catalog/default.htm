@@ -1,3 +1,7 @@
-<p>This is the default markup for component Catalog</p>
-
-<small>You can delete this file if you want</small>
+{% if this.page.id == 'catalog' %}
+    {% partial __SELF__~"::categories" %}
+{% elseif this.page.id == 'category' %}
+    {% partial __SELF__~"::category" %}
+{% elseif this.page.id == 'dish' %}
+    {% partial __SELF__~"::dish" %}
+{% endif %}
