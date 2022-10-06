@@ -31,7 +31,7 @@
                         <a href="/catalog/{{ category.slug }}/{{ dish.slug }}">{{ dish.name }}</a>
                     </div>
                     <div class="card-text">
-                        {{ dish.description|raw }}
+                        {{ dish.shortDescription|raw }}
                     </div>
                     <div class="text-end">
                         Price: <a href="/catalog/{{ category.slug }}/{{ dish.slug }}" class="btn btn-primary">{{ dish.price }}</a>

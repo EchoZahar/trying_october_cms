@@ -2,9 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
-use Zohan\Restic\Components\Dishes as Dishes;
 use Zohan\Restic\Components\Catalog as Catalog;
-use Zohan\Restic\Components\Category as CatalogCategory;
 
 /**
  * Plugin Information File
@@ -55,8 +53,6 @@ class Plugin extends PluginBase
     {
         return [
             Catalog::class          => 'catalog',
-//            Dishes::class           => 'dishes',
-//            CatalogCategory::class  => 'category'
         ];
     }
 

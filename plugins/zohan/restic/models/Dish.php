@@ -1,5 +1,6 @@
 <?php namespace Zohan\Restic\Models;
 
+use Illuminate\Support\Str;
 use Model;
 use October\Rain\Database\Traits\SoftDelete;
 use October\Rain\Database\Traits\Validation;
@@ -40,4 +41,9 @@ class Dish extends Model
     public $attachMany = [
         'dish_images' => [File::class],
     ];
+
+    public function shortDescription(): string
+    {
+        return Str::limit($this->description, 100);
+    }
 }
