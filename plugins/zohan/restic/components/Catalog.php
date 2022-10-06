@@ -33,7 +33,8 @@ class Catalog extends ComponentBase
     {
         if ($this->page->id === 'catalog') {
             $this->page['categories'] = CategoryModel::with('image')
-                ->whereNull('parent_id')
+                ->where('parent_id', 0)
+                ->where('is_published', 1)
                 ->paginate($this->property('categories'));
         } elseif ($this->page->id === 'category') {
             $this->page['category'] = CategoryModel::with('dishes')->where('slug', $this->param('category'))->first();

@@ -17,9 +17,7 @@ fields:
         label: 'Generate URL'
         type: text
         span: right
-        preset:
-            field: name
-            type: url
+        preset: name
     image:
         label: 'Cover for category'
         mode: file
