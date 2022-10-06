@@ -4,10 +4,10 @@
             <h1>{{ category.name }}</h1>
             <h3>{{ category.description|raw }}</h3>
             <div class="text-center">
-                <a href="/catalog" class="btn btn-primary">show all categories</a>
+                <a href="/catalog" class="btn btn-primary">go back to catalog</a>
             </div>
         </div>
-        {% if category.image %}
+        {% if category.image != null %}
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
@@ -18,12 +18,14 @@
         {% endif %}
     </div>
 
-    <div class="row {%if ategory.dishes.count > 3 %} justify-content-center {% endif %}">
+    <div class="row {%if category.dishes.count > 3 %} justify-content-center {% endif %}">
         {% if category.dishes.count > 0%}
         {% for dish in category.dishes %}
         <div class="col-md-4">
             <div class="card">
+                {% if dish.dish_images.count > 0 %}
                 <img src="{{ dish.dish_images.first.path }}" class="card-img-top" alt="...">
+                {% endif %}
                 <div class="card-body">
                     <div class="card-title">
                         <a href="/catalog/{{ category.slug }}/{{ dish.slug }}">{{ dish.name }}</a>

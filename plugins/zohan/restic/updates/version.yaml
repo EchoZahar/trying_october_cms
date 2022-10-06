@@ -1,16 +1,5 @@
 1.0.1: 'First version of Restic'
 1.0.2:
-    - 'Create categories restaurant.'
+    - 'Create categories and dishes restaurant.'
     - create_categories_table.php
-1.0.3:
-    - 'Updated table zohan_restic_categories'
-    - builder_table_update_zohan_restic_categories.php
-1.0.4:
-    - 'Created table zohan_restic_dishes'
-    - builder_table_create_zohan_restic_dishes.php
-1.0.5:
-    - 'Updated table zohan_restic_dishes'
-    - builder_table_update_zohan_restic_dishes.php
-1.0.6:
-    - 'Updated table zohan_restic_dishes'
-    - builder_table_update_zohan_restic_dishes_2.php
+    - create_dishes_table.php

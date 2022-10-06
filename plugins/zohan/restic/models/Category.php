@@ -4,7 +4,6 @@ use Model;
 use October\Rain\Database\Traits\NestedTree;
 use October\Rain\Database\Traits\Sluggable;
 use October\Rain\Database\Traits\SoftDelete;
-use October\Rain\Database\Traits\Sortable;
 use October\Rain\Database\Traits\Validation;
 use System\Models\File;
 
@@ -22,14 +21,6 @@ class Category extends Model
     protected $fillable = [];
 
     public $rules = [];
-
-    protected $casts = [];
-
-    protected $jsonable = [];
-
-    protected $appends = [];
-
-    protected $hidden = [];
 
     protected $dates = [
         'created_at',
@@ -50,4 +41,9 @@ class Category extends Model
     public $attachOne = [
         'image' => [File::class],
     ];
+
+    public function beforeCreate()
+    {
+        if (is_null($this->parent_id)) $this->parent_id = 0;
+    }
 }

@@ -12,11 +12,11 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('zohan_restic_categories', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->string('slug');
             $table->text('description')->nullable();
-            $table->boolean('is_published')->default(0);
+            $table->boolean('is_published')->default(false);
             $table->integer('parent_id')->default(0);
             $table->integer('nest_left')->default(0);
             $table->integer('nest_right')->default(0);

@@ -41,7 +41,6 @@ class Catalog extends ComponentBase
                 return Response::make($this->controller->run('404'), 404);
             }
         } elseif ($this->page->id === 'dish') {
-//            dd($this->page->id, $this->param('dish'), __METHOD__, __CLASS__);
             $this->page['dish'] = Dish::where('slug', $this->param('dish'))->first();
             if (!$this->page['dish']) {
                 return Response::make($this->controller->run('404'), 404);

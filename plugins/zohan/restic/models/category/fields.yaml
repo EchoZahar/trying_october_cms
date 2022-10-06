@@ -8,7 +8,7 @@ fields:
         label: 'Parent category'
         type: relation
         span: right
-        emptyOption: parent category
+        emptyOption: 'parent category'
     name:
         label: 'Name category'
         type: text
@@ -39,3 +39,4 @@ fields:
         span: full
         type: richeditor
         comment: 'its optional, you make empty description'
+
