@@ -36,6 +36,7 @@ fields:
         type: number
         placeholder: 'format: 0.00'
         format: "$%.2f"
+        options:
     description:
         label: 'Description this dish'
         size: large
@@ -52,5 +53,5 @@ fields:
         type: fileupload
         imageHeight: '1080'
         imageWidth: '1920'
-#        mimeTypes: jpg,jpeg,png
-#        deferredBinding: true
+        mimeTypes: jpg,jpeg,png
+        deferredBinding: true

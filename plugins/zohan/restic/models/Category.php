@@ -20,7 +20,15 @@ class Category extends Model
 
     protected $fillable = [];
 
-    public $rules = [];
+    protected $casts = [
+        'is_published' => 'boolean'
+    ];
+
+    public $rules = [
+        'name'          => ['bail', 'required', 'string', 'min:2', 'max:150', 'unique:zohan_restic_categories'],
+        'description'   => ['nullable', 'string', 'min:2', 'max:5000'],
+        'slug'          => ['bail', 'required', 'string', 'unique:zohan_restic_dishes'],
+    ];
 
     protected $dates = [
         'created_at',
