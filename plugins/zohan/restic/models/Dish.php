@@ -14,17 +14,19 @@ class Dish extends Model
 
     protected $guarded = ['*'];
 
-    protected $fillable = [];
+    protected $jsonable = [
+        'price'
+    ];
 
     protected $casts = [
-        'is_published' => 'boolean'
+        'is_published' => 'boolean',
     ];
 
     public $rules = [
         'name'          => ['bail', 'required', 'string', 'min:2', 'max:150'],
         'slug'          => ['bail', 'required', 'string', 'unique:zohan_restic_dishes'],
         'description'   => ['nullable', 'string', 'max:5000'],
-        'price'         => ['required', 'numeric', 'between:0,99999999.99'],
+        'price'         => ['required'],
         'category'      => ['required', 'integer']
     ];
 
@@ -45,5 +47,11 @@ class Dish extends Model
     public function shortDescription(): string
     {
         return Str::limit($this->description, 100);
+    }
+
+    public function getPriceWithCurrencyAttribute()
+    {
+        $json = json_decode($this->attributes['price']);
+        return $json[0]->price . ' ' . $json[0]->currency;
     }
 }

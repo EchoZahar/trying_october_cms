@@ -30,13 +30,26 @@ fields:
         span: left
         type: switch
     price:
-        labal: price
+        label: price
         span: right
-        comment: 'set the price for this dish'
-        type: number
-        placeholder: 'format: 0.00'
-        format: "$%.2f"
-        options:
+        type: repeater
+        prompt: 'Add currency and inter price'
+        style: default
+        form:
+            fields:
+                currency:
+                    label: currency
+                    span: auto
+                    type: dropdown
+                    options:
+                        USD: USD
+                        RUB: RUB
+                price:
+                    label: inter dish price
+                    span: auto
+                    type: number
+                    placeholder: 'format: 0.00'
+                    format: "$%.2f"
     description:
         label: 'Description this dish'
         size: large

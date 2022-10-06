@@ -3,3 +3,6 @@
     - 'Create categories and dishes restaurant.'
     - create_categories_table.php
     - create_dishes_table.php
+1.0.3:
+    - 'Update price field'
+    - modify_zohan_resic_dishes_table_add_currency_columns_table.php

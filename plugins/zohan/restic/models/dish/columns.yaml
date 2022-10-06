@@ -16,12 +16,22 @@ columns:
         searchable: true
         sortable: false
         width: '100'
-    price:
+    processed_price:
+    price_with_currency:
         label: price
-        type: number
-        width: '100'
-        searchable: true
-        sortable: true
+#        type: partial
+#        path: ~/plugins/zohan/restic/models/dish/price_column.htm
+#        price[currency]:
+#        name: currency
+#        width: 100
+#        type: text
+#        jsonFrom: currency
+#        sortable: true
+#    price[price]:
+#        name: price
+#        type: number
+#        jsonFrom: price
+#        width: 100
     is_published:
         label: publication
         type: switch
